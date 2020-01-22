@@ -1,9 +1,15 @@
 {
-    "name": "theiconic/name-parser",
+    "name": "blacksenator/name-parser",
     "description": "PHP library for parsing a string containing a full name into its parts",
     "type": "library",
+    "homepage": "https://github.com/blacksenator/name-parser",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Black Senator",
+            "email": "knuffy@anasco.de",
+            "role": "Developer"
+        },
         {
             "name": "The Iconic",
             "email": "engineering@theiconic.com.au"
@@ -19,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TheIconic\\NameParser\\": ["src/", "tests/"]
+            "blacksenator\\NameParser\\": ["src/", "tests/"]
         }
     }
 }
