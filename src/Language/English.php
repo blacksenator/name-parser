@@ -65,6 +65,12 @@ class English implements LanguageInterface
         'vanden' => 'vanden',
         'vere' => 'vere',
         'von' => 'von',
+        'Mac' => 'Mac',
+        'Mc' => 'Mc',
+        'Ó' => 'Ó',
+        'Ní' => 'Ní',
+        'Ua' => 'Ua',
+        'Bán' => 'Bán',
     ];
 
     public function getSuffixes(): array
@@ -81,4 +87,23 @@ class English implements LanguageInterface
     {
         return self::LASTNAME_PREFIXES;
     }
+
+    // see German for further information
+    public function getExtensions(): array
+    {
+        return [];
+    }
+
+    // see German for further information
+    public function getTitles(): array
+    {
+        return [];
+    }
+
+    // see German for further information
+    public function getCompanies(): array
+    {
+        return [];
+    }
 }
+

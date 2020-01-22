@@ -66,12 +66,15 @@ class Name
         $results = [];
         $keys = [
             'salutation' => [],
+            'title' => [],
             'firstname' => [],
             'nickname' => [$format],
             'middlename' => [],
             'initials' => [],
+            'extension' => [],
             'lastname' => [],
             'suffix' => [],
+            'company' => [],
         ];
 
         foreach ($keys as $key => $args) {
@@ -189,6 +192,107 @@ class Name
     public function getMiddlename(): string
     {
         return $this->export('Middlename');
+    }
+
+    /**
+     * get the company
+     *
+     * @return string
+     */
+    public function getCompany(): string
+    {
+        return $this->export('Company');
+    }
+
+    /**
+     * get the extension
+     *
+     * @return string
+     */
+    public function getExtension(): string
+    {
+        return $this->export('Extension');
+    }
+
+    /**
+     * get the titles(s)
+     *
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->export('Title');
+    }
+
+    /**
+     * get an array with well formatted names and their separators,
+     * where the keys are representing vCard properties
+     * @see https://tools.ietf.org/html/rfc6350#section-6.2.2
+
+     * $prefix controls whether the prefix is part of the name
+     * (in the first segment) or issued separately in the fifth segment
+     * (honorific suffixes):
+     * Example:
+     * true: Richard Mac Dougall -> N: Mac Dougall;Richard;;;
+     * false: Otto von Bismark -> N: Bismark;Otto;;;von
+     * In order to set the value differently, it would be necessary
+     * to know the origin of the name
+     * @see https://en.wikipedia.org/wiki/Tussenvoegsel
+     *
+     * @param bool $prefix
+     * @return array
+     */
+    public function getVCardArray(bool $prefix = false): array
+    {
+        if (empty($this->getCompany())) {
+            $fullName = implode(' ', array_filter([
+                $this->getTitle(),
+                $this->getFirstname(),
+                $this->getMiddlename(),
+                $this->getInitials(),
+                $this->getExtension(),
+                $this->getLastnamePrefix(),
+                $this->getLastname(true),
+                $this->getSuffix()
+            ]));
+            if ($prefix) {
+                $lastname = implode(' ', array_filter([
+                    $this->getLastnamePrefix(),
+                    $this->getLastname()
+                ]));
+                $prefix = '';
+            } else {
+                $lastname = $this->getLastname(true);
+                $prefix = $this->getLastnamePrefix();
+            }
+            $nameParts = implode(';', [                 // RFC6350: five segments in sequence:
+                $lastname,                              // 1. Family Names (also known as surnames)
+                $this->getFirstname(),                  // 2. Given Names
+                implode(',', array_filter([             // 3. Additional Names
+                    str_replace(' ', ',', $this->getMiddlename()),
+                    $this->getInitials(),
+                    ])),
+                implode(',', array_filter([             // 4. Honorific Prefixes
+                    $this->getSalutation(),
+                    $this->getTitle(),
+                    ])),
+                implode(',', array_filter([             // 5. Honorific Suffixes
+                    $this->getExtension(),
+                    $prefix,
+                    $this->getSuffix(),
+                    ]))
+            ]);
+        } else {
+            $fullName = $this->getCompany();
+            $nameParts = '';
+        }
+
+        return [
+            'FN' => $fullName,
+            'N' => $nameParts,
+            'NICKNAME' => $this->getNickname(),
+            'ORG'      => $this->getCompany(),
+        ];
     }
 
     /**
