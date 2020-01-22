@@ -1,10 +1,10 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Title;
-use TheIconic\NameParser\Part\LastnamePrefix;
+use blacksenator\NameParser\Part\AbstractPart;
+use blacksenator\NameParser\Part\Title;
+use blacksenator\NameParser\Part\LastnamePrefix;
 
 /**
  * A generic mapper for name parts that consist of
@@ -32,9 +32,9 @@ class MultipartMapper extends AbstractMapper
         $this->sampleType = $sampleType;
 
         if (strtolower($sampleType) == 'prefix') {
-            $this->className = 'TheIconic\\NameParser\\Part\\Lastname' . ucfirst($sampleType);
+            $this->className = 'blacksenator\\NameParser\\Part\\Lastname' . ucfirst($sampleType);
         } else {
-            $this->className = 'TheIconic\\NameParser\\Part\\' . ucfirst($sampleType);
+            $this->className = 'blacksenator\\NameParser\\Part\\' . ucfirst($sampleType);
         }
 
         $values = [];

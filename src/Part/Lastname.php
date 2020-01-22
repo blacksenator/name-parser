@@ -1,6 +1,6 @@
 <?php
 
-namespace TheIconic\NameParser\Part;
+namespace blacksenator\NameParser\Part;
 
 class Lastname extends NamePart
 {

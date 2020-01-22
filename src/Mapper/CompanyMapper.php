@@ -1,8 +1,8 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\Company;
+use blacksenator\NameParser\Part\Company;
 
 /**
  * Mapper to identify a string as a company name

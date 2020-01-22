@@ -1,10 +1,10 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace blacksenator\NameParser;
 
 use PHPUnit\Framework\TestCase;
-use TheIconic\NameParser\Language\English;
-use TheIconic\NameParser\Language\German;
+use blacksenator\NameParser\Language\English;
+use blacksenator\NameParser\Language\German;
 
 class ParserTest extends TestCase
 {

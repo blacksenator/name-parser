@@ -1,9 +1,9 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Initial;
+use blacksenator\NameParser\Part\AbstractPart;
+use blacksenator\NameParser\Part\Initial;
 
 /**
  * single letter, possibly followed by a period

@@ -1,9 +1,9 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Extension;
+use blacksenator\NameParser\Part\AbstractPart;
+use blacksenator\NameParser\Part\Extension;
 
 /**
  * Mapper to identify lastname extensions (nobility predicates) in a name

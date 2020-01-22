@@ -1,6 +1,6 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace blacksenator\NameParser;
 
 interface LanguageInterface
 {

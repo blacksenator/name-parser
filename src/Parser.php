@@ -1,19 +1,19 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace blacksenator\NameParser;
 
-use TheIconic\NameParser\Language\German;
-use TheIconic\NameParser\Language\English;
-use TheIconic\NameParser\Mapper\NicknameMapper;
-use TheIconic\NameParser\Mapper\SalutationMapper;
-use TheIconic\NameParser\Mapper\SuffixMapper;
-use TheIconic\NameParser\Mapper\InitialMapper;
-use TheIconic\NameParser\Mapper\LastnameMapper;
-use TheIconic\NameParser\Mapper\FirstnameMapper;
-use TheIconic\NameParser\Mapper\MiddlenameMapper;
-use TheIconic\NameParser\Mapper\CompanyMapper;
-use TheIconic\NameParser\Mapper\ExtensionMapper;
-use TheIconic\NameParser\Mapper\MultipartMapper;
+use blacksenator\NameParser\Language\German;
+use blacksenator\NameParser\Language\English;
+use blacksenator\NameParser\Mapper\NicknameMapper;
+use blacksenator\NameParser\Mapper\SalutationMapper;
+use blacksenator\NameParser\Mapper\SuffixMapper;
+use blacksenator\NameParser\Mapper\InitialMapper;
+use blacksenator\NameParser\Mapper\LastnameMapper;
+use blacksenator\NameParser\Mapper\FirstnameMapper;
+use blacksenator\NameParser\Mapper\MiddlenameMapper;
+use blacksenator\NameParser\Mapper\CompanyMapper;
+use blacksenator\NameParser\Mapper\ExtensionMapper;
+use blacksenator\NameParser\Mapper\MultipartMapper;
 
 class Parser
 {

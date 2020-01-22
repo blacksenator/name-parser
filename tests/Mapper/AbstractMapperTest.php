@@ -1,6 +1,6 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
 use PHPUnit\Framework\TestCase;
 

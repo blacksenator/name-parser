@@ -1,8 +1,8 @@
 <?php
 
-namespace TheIconic\NameParser\Language;
+namespace blacksenator\NameParser\Language;
 
-use TheIconic\NameParser\LanguageInterface;
+use blacksenator\NameParser\LanguageInterface;
 
 /**
  * These lists have been extensively supplemented by

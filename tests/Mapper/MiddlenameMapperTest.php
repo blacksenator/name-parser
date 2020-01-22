@@ -1,11 +1,11 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace blacksenator\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\Salutation;
-use TheIconic\NameParser\Part\Firstname;
-use TheIconic\NameParser\Part\Middlename;
-use TheIconic\NameParser\Part\Lastname;
+use blacksenator\NameParser\Part\Salutation;
+use blacksenator\NameParser\Part\Firstname;
+use blacksenator\NameParser\Part\Middlename;
+use blacksenator\NameParser\Part\Lastname;
 
 class MiddlenameMapperTest extends AbstractMapperTest
 {

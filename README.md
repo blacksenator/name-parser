@@ -100,7 +100,7 @@ composer require blacksenator/name-parser
 ```php
 <?php
 
-$parser = new TheIconic\NameParser\Parser();
+$parser = new blacksenator\NameParser\Parser();
 
 $name = $parser->parse($input);
 
@@ -163,9 +163,9 @@ echo $name->getFullName();
 ### Setting Languages
 
 ```php
-$parser = new TheIconic\NameParser\Parser([
-    new TheIconic\NameParser\Language\German(),  // default in this version
-    new TheIconic\NameParser\Language\English(), // recommended
+$parser = new blacksenator\NameParser\Parser([
+    new blacksenator\NameParser\Language\German(),  // default in this version
+    new blacksenator\NameParser\Language\English(), // recommended
       //
 ])
 ```
@@ -173,21 +173,21 @@ $parser = new TheIconic\NameParser\Parser([
 ### Setting nickname delimiters
 
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new blacksenator\NameParser\Parser();
 $parser->setNicknameDelimiters(['(' => ')']);
 ```
 
 ### Setting whitespace characters
 
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new blacksenator\NameParser\Parser();
 $parser->setWhitespace("\t _.");
 ```
 
 ### Limiting the position of salutations
 
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new blacksenator\NameParser\Parser();
 $parser->setMaxSalutationIndex(2);
 ```
 
@@ -197,7 +197,7 @@ the first half of the name parts.
 ### Adjusting combined initials support
 
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new blacksenator\NameParser\Parser();
 $parser->setMaxCombinedInitials(3);
 ```
 
