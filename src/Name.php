@@ -225,6 +225,26 @@ class Name
     }
 
     /**
+     * get the complete assembled name
+     */
+    public function getCompleteName(): string
+    {
+        $suffix = !empty($this->getSuffix()) ? ', ' . $this->getSuffix() : '';
+        $completeName = implode(' ', array_filter([
+            $this->getTitle(),
+            $this->getFirstname(),
+            $this->getMiddlename(),
+            $this->getInitials(),
+            $this->getExtension(),
+            $this->getLastnamePrefix(),
+            $this->getLastname(true),
+            $suffix
+        ]));
+
+        return $completeName;
+    }
+
+    /**
      * get an array with well formatted names and their separators,
      * where the keys are representing vCard properties
      * @see https://tools.ietf.org/html/rfc6350#section-6.2.2
@@ -245,16 +265,7 @@ class Name
     public function getVCardArray(bool $prefix = false): array
     {
         if (empty($this->getCompany())) {
-            $fullName = implode(' ', array_filter([
-                $this->getTitle(),
-                $this->getFirstname(),
-                $this->getMiddlename(),
-                $this->getInitials(),
-                $this->getExtension(),
-                $this->getLastnamePrefix(),
-                $this->getLastname(true),
-                $this->getSuffix()
-            ]));
+            $fullName = $this->getCompleteName();
             if ($prefix) {
                 $lastname = implode(' ', array_filter([
                     $this->getLastnamePrefix(),
